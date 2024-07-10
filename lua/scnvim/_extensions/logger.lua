@@ -15,7 +15,7 @@ return require'scnvim'.register_extension {
   ---   },
   --- }
   setup = function(ext_config, user_config)
-    logger.path = ext_config.path or '/tmp/sclang-log.txt'
+    logger.path = ext_config.path or '/tmp/post'
   end,
 
   --- This is the public API of this plugin. Try not to break it :)

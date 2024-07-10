@@ -8,8 +8,13 @@ local function on_post(line)
     return
   end
   local s, ms = uv.gettimeofday()
+  -- logger.handle = io.open(logger.path, 'w+')
   line = string.format('[%d.%d] %s\n', s, ms, line)
+  -- line = string.format('%s\n', line)
   logger.handle:write(line)
+  -- logger.handle:close()
+  logger.handle:flush()
+  -- io.flush()
 end
 
 function logger.start(mode, path)
